@@ -75,7 +75,11 @@ python scripts/aggregate_checkpoints.py \
   --final-root "$RUN_ROOT/results" --output-prefix stss
 ```
 
-Completion requires matching requested/downloaded assemblies, complete valid cache coverage, successful worker exits, equal result-row and hit counts, and zero network/cache anomalies. See the [validated 6,000-genome profile](docs/validated-6000-run.md).
+Completion requires matching requested/downloaded assemblies, complete valid cache coverage, successful worker exits, equal result-row and hit counts, and zero network/cache anomalies.
+
+The orchestration was used to substantially improve throughput at a 6,000-sample scale. To protect research data, this repository deliberately contains no sample identifiers, assembly accessions, genome or GBFF metadata, cache contents, hit rows, timing measurements, result hashes, or validation reports.
+
+该编排在 6,000 个样本规模的实践中实现了显著提速。为保护研究数据，本仓库不包含任何样本标识符、assembly accession、基因组或 GBFF 元数据、缓存内容、命中行、耗时数据、结果哈希或验证报告。
 
 ## Runtime assets and attribution / 运行资产与归属
 
