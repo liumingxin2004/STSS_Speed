@@ -135,7 +135,16 @@ def clone_and_publish(destination: Path) -> None:
     with tempfile.TemporaryDirectory(prefix=".bootstrap_stss_", dir=destination.parent) as temporary:
         staging = Path(temporary) / "upstream"
         completed = subprocess.run(
-            ["git", "clone", "--filter=blob:none", "--no-checkout", UPSTREAM_URL, str(staging)],
+            [
+                "git",
+                "-c",
+                "http.version=HTTP/1.1",
+                "clone",
+                "--filter=blob:none",
+                "--no-checkout",
+                UPSTREAM_URL,
+                str(staging),
+            ],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
