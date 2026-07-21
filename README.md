@@ -23,6 +23,16 @@ python scripts/check_runtime.py
 
 The bootstrap is intentionally idempotent. It keeps the upstream checkout unchanged and creates a separate ignored `.stss_speed/bin/` directory of links to the locally installed BLAST, HMMER, Clustal Omega, and CRT runtime assets. A modified or mismatched checkout is rejected and never overwritten.
 
+### Native WSL video demo / 原生 WSL 演示
+
+After cloning the repository in a WSL shell that already has Conda, run one presentation-friendly command:
+
+```bash
+bash scripts/demo_clean_environment.sh
+```
+
+It creates a unique Conda environment, bootstraps STSS, checks runtime dependencies and all public CLIs, then runs the no-data smoke test. It keeps that environment for inspection and prints its exact cleanup command. To make the same invocation remove only its own new environment after a successful test, add `--cleanup`.
+
 ## Offline workflow / 离线流程
 
 Every run must use a new run root and output root. Input FNA files are treated as read-only. The following abbreviated example uses explicit executable paths only where they are environment-specific.
