@@ -77,9 +77,15 @@ python scripts/aggregate_checkpoints.py \
 
 Completion requires matching requested/downloaded assemblies, complete valid cache coverage, successful worker exits, equal result-row and hit counts, and zero network/cache anomalies.
 
-The orchestration was used to substantially improve throughput at a 6,000-sample scale. To protect research data, this repository deliberately contains no sample identifiers, assembly accessions, genome or GBFF metadata, cache contents, hit rows, timing measurements, result hashes, or validation reports.
+## Aggregate performance / 聚合性能
 
-该编排在 6,000 个样本规模的实践中实现了显著提速。为保护研究数据，本仓库不包含任何样本标识符、assembly accession、基因组或 GBFF 元数据、缓存内容、命中行、耗时数据、结果哈希或验证报告。
+The orchestration was used to substantially improve throughput at a 6,000-sample scale. The STSS stage completed in 2,602.406 seconds (43 minutes 22 seconds): **2.306 genomes/second** or **138.334 genomes/minute**. Compared with an earlier 500-sample offline pilot that measured 0.253 genomes/second, this is a **9.11× observed throughput increase**. This is a cross-run measurement, not a controlled same-input serial benchmark, so it should not be interpreted as a universal speedup factor.
+
+该编排在 6,000 个样本规模的实践中实现了显著提速。STSS 阶段耗时 2,602.406 秒（43 分 22 秒），吞吐量为 **2.306 个基因组/秒**或 **138.334 个基因组/分钟**。相对于较早的 500 样本离线试运行（0.253 个基因组/秒），观测到的吞吐量提升为 **9.11 倍**。这是跨运行的实测吞吐量比较，而非同一输入下严格的串行基准，因此不应解读为普适的固定加速倍数。
+
+To protect research data, this repository deliberately contains no sample identifiers, assembly accessions, genome or GBFF metadata, cache contents, hit rows, timing measurements beyond the aggregate values above, result hashes, or validation reports.
+
+为保护研究数据，本仓库不包含任何样本标识符、assembly accession、基因组或 GBFF 元数据、缓存内容、命中行、除上述聚合指标外的耗时数据、结果哈希或验证报告。
 
 ## Runtime assets and attribution / 运行资产与归属
 
