@@ -14,6 +14,9 @@ from pathlib import Path
 
 UPSTREAM_URL = "https://github.com/kew222/Self-Targeting-Spacer-Searcher.git"
 UPSTREAM_COMMIT = "9e5d560ffb6100c5c28b46e71dae0bcde7e533e2"
+# This upstream tag resolves to UPSTREAM_COMMIT.  The commit check below is
+# authoritative; the tag keeps bootstrap transfers small and predictable.
+UPSTREAM_REF = "v1.2.1"
 PINNED_ASSET_BLOBS = {
     "HMMs/HMMs_Cas_proteins.hmm": "72ce0e2c1bb9d00665bad5b7a942ff6bae1e532f",
     "HMMs/REPEATS_HMMs.hmm": "7c32a1d15c56b9cb8a49509c29f92e3d44fc4f07",
@@ -140,8 +143,10 @@ def clone_and_publish(destination: Path) -> None:
                 "-c",
                 "http.version=HTTP/1.1",
                 "clone",
-                "--filter=blob:none",
-                "--no-checkout",
+                "--depth=1",
+                "--single-branch",
+                "--branch",
+                UPSTREAM_REF,
                 UPSTREAM_URL,
                 str(staging),
             ],
