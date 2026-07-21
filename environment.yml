@@ -1,0 +1,13 @@
+name: stss-speed
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - biopython=1.79
+  - requests
+  - blast>=2.12
+  - hmmer=3.3.2
+  - clustalo
+  - openjdk=11
+  - ncbi-datasets-cli

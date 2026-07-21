@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+validation_scratch*/
+data/
+runs/
+results/
+*.fna
+*.fa
+*.fasta
+*.gb
+*.gbff
+*.zip
+*.log
+
+# Bootstrap output and assets that must never be published from this repository.
+.stss_speed/
+/HMMs/
+*.hmm
+*.hmm.h3*
+/CRISPR_definitions.py
+
+# This local validation report is retained in the workspace but is not a
+# distributable result artifact.
+/docs/validated-6000-run.md
