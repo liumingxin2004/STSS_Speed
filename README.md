@@ -87,6 +87,12 @@ To protect research data, this repository deliberately contains no sample identi
 
 为保护研究数据，本仓库不包含任何样本标识符、assembly accession、基因组或 GBFF 元数据、缓存内容、命中行、除上述聚合指标外的耗时数据、结果哈希或验证报告。
 
+## Development with Codex and GPT-5.6 / 使用 Codex 与 GPT-5.6 开发
+
+The research problem, large-scale analysis goal, and core workflow logic were defined by the author, a bioinformatics engineer working with large biological datasets. Codex powered by GPT-5.6 was used as an engineering collaborator: it helped implement and review the orchestration scripts, improve failure isolation, add runtime and validation checks, document reproducible commands, and run small-scale verification. The author retained responsibility for the scientific scope, system decisions, performance interpretation, and protection of unpublished models and research data.
+
+研究问题、大规模分析目标与核心流程逻辑由作者提出。作者是一名从事大规模生物数据分析的生物信息工程师。由 GPT-5.6 驱动的 Codex 作为工程协作工具，用于实现和审查编排脚本、改善故障隔离、加入运行时和验证检查、编写可复现命令、以及进行小规模验证。作者始终负责科学边界、系统决策、性能解读以及未公开模型与研究数据的保护。
+
 ## Runtime assets and attribution / 运行资产与归属
 
 The bootstrap is pinned to `kew222/Self-Targeting-Spacer-Searcher@9e5d560ffb6100c5c28b46e71dae0bcde7e533e2` and verifies the original Cas HMM, repeat HMM, and `CRISPR_definitions.py` before use. The upstream STSS project has no license declaration in its GitHub metadata at the time this repository was created; users must review upstream attribution and licensing before redistributing STSS itself.
