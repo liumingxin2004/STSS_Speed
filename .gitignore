@@ -20,7 +20,3 @@ results/
 *.hmm
 *.hmm.h3*
 /CRISPR_definitions.py
-
-# This local validation report is retained in the workspace but is not a
-# distributable result artifact.
-/docs/validated-6000-run.md
